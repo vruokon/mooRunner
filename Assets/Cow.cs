@@ -4,31 +4,41 @@ using UnityEngine;
 
 public class Cow : MonoBehaviour
 {
-    private Rigidbody2D rb2D;
-    public float up;
-    // Start is called before the first frame update
+    [SerializeField] private LayerMask platformsLayerMask;
+    float moveSpeed = 3;
+
+   private Rigidbody2D rb;
+   private BoxCollider2D boxCollider2d;
+
     void Start()
-    {   //getcomponent like getElementById
-        rb2D = GetComponent<Rigidbody2D>();
-        //StartCoroutine(rotate());
+    {
+        rb = transform.GetComponent<Rigidbody2D>();
+        boxCollider2d = transform.GetComponent<BoxCollider2D>();
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        if (Input.GetKey("space"))
+        if (IsGrounded() && Input.GetKeyDown(KeyCode.Space)) //Hyppää vain jos koskettaa maata
         {
-            rb2D.velocity = new Vector3(0.0f, up, 0.0f);
+            float jumpHeight = 5f;
+            rb.velocity = Vector2.up * jumpHeight;
+        }
+
+        if (Input.GetKey(KeyCode.D))
+        {
+            rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+        }
+
+        if (Input.GetKey(KeyCode.A))
+        {
+            rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
         }
     }
-    IEnumerator rotate()
-    {
-        int i = 0;
-        while (true)
-        {
-            i += 1;
-            rb2D.MoveRotation((float)i);
-            yield return new WaitForSeconds(.01f);
-        }
+
+//Tarkastetaan että lehmä koskettaa platformia
+    private bool IsGrounded() {
+     RaycastHit2D raycastHit2d = Physics2D.BoxCast(boxCollider2d.bounds.center, boxCollider2d.bounds.size, 0f, Vector2.down, .1f, platformsLayerMask);
+    Debug.Log(raycastHit2d.collider);
+    return raycastHit2d.collider != null;
     }
 }
