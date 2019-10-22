@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Spike : MonoBehaviour {
     public int damage = 1;
-
- void OnTriggerEnter2D(Collider2D other)
+    
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Cow")) {
             //Pelaaja ottaa vahinkoa.
@@ -13,4 +13,10 @@ public class Spike : MonoBehaviour {
            Debug.Log(other.GetComponent<Cow>().health);
         }
     }
+
+    // Tuhoaa objektin, kun se on kadonnut kameran alueelta
+    void OnBecameInvisible() {
+         Destroy(gameObject);
+     }
+
 }
