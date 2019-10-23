@@ -17,6 +17,7 @@ public class Spike : MonoBehaviour {
     // Tuhoaa objektin, kun se on kadonnut kameran alueelta
     void OnBecameInvisible() {
          Destroy(gameObject);
+         Debug.Log("Destroyed!");
      }
 
 }
