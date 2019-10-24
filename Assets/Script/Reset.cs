@@ -15,9 +15,12 @@ public class Reset : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(SceneManager.LoadScene("SampleScene"));
         if (Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene("SampleScene");
+   
+           // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }
