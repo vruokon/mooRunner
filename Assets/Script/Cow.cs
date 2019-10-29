@@ -33,15 +33,21 @@ public class Cow : MonoBehaviour
             rb.velocity = Vector2.up * jumpHeight;
         }
 
-        if (Input.GetKey(KeyCode.D))
+       if (Input.GetKey(KeyCode.D))
         {
+            rb.constraints = RigidbodyConstraints2D.None;
             rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
-        }
-
-        if (Input.GetKey(KeyCode.A))
-        {
+        } else if (Input.GetKey(KeyCode.A))
+        {   
+            rb.constraints = RigidbodyConstraints2D.None;
             rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
-        }
+        } else if (!IsGrounded()){
+            
+            rb.constraints = RigidbodyConstraints2D.None;
+        }else
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX;
+        }  
     }
 
 // Siirrytään GameOver-ruutuun, mikäli lehmä on kameran ulkopuolella
