@@ -27,7 +27,7 @@ public class Cow : MonoBehaviour
 
         if (IsGrounded() && Input.GetKeyDown(KeyCode.Space)) //Hyppää vain jos koskettaa maata
         {
-            float jumpHeight = 5f;
+            float jumpHeight = 6f;
             rb.velocity = Vector2.up * jumpHeight;
         }
 
