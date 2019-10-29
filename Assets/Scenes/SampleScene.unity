@@ -227,6 +227,7 @@ GameObject:
   - component: {fileID: 810815878}
   - component: {fileID: 810815877}
   - component: {fileID: 810815876}
+  - component: {fileID: 810815882}
   m_Layer: 8
   m_Name: cow 1_0
   m_TagString: Cow
@@ -249,7 +250,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -378,6 +379,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &810815882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810815875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4efe1f0335af724aa69fa16da023655, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  massOfMoon: 100
+  centerOfMoon: {fileID: 1770753937}
+  G: 1
 --- !u!1 &1770753935
 GameObject:
   m_ObjectHideFlags: 0
