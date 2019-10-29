@@ -21,11 +21,13 @@ public class Moon : MonoBehaviour
     IEnumerator rotate()
     {
         float i = 0;
+        float j = 0.05f;
         while (true)
         {
-            i += 0.05f;
+            i += j;
             rb2D.MoveRotation((float)i);
             yield return new WaitForSeconds(.01f);
+            j += 0.0005f;
         }
     }
 }
