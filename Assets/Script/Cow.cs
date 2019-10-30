@@ -65,14 +65,10 @@ public class Cow : MonoBehaviour
     float straightenCow(float x, float y){
         float moonX = 0.0f;
         float moonY = -6.0f;
-        decimal decMoonX = new decimal(moonX);
-        decimal decMoonY = new decimal(moonY);
-        double doubMoonX = (double)decMoonX;
-        double doubMoonY = (double)decMoonY;
-        decimal X = new decimal(x);
-        decimal Y = new decimal(y);
-        double doubX = (double)X;
-        double doubY = (double)Y;
+        double doubMoonX = (double)moonX;
+        double doubMoonY = (double)moonY;
+        double doubX = (double)x;
+        double doubY = (double)y;
         double deltaX = doubX - doubMoonX;
         double deltaY = doubY - doubMoonY;
         double rad = Math.Atan2(deltaY, deltaX);
