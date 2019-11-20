@@ -66,7 +66,7 @@ public void PlaySound(string _name){
         }
     }
     //no sound with _name
-    Debug.LogWarning("AudioManager: SOund not found in list: " + _name);
+    Debug.LogWarning("AudioManager: Sound not found in list: " + _name);
 }
    
 }

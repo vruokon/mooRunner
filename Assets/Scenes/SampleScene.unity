@@ -508,6 +508,16 @@ MonoBehaviour:
     volume: 0.618
     pitch: 0.925
     loop: 1
+  - name: Jump
+    clip: {fileID: 8300000, guid: 0a19e1b2e7487564e906e398759c2727, type: 3}
+    volume: 0.421
+    pitch: 0.925
+    loop: 0
+  - name: Death
+    clip: {fileID: 8300000, guid: 10ff9187d1920664292a603ec3945bf1, type: 3}
+    volume: 1
+    pitch: 0.954
+    loop: 0
 --- !u!4 &1321290101
 Transform:
   m_ObjectHideFlags: 0

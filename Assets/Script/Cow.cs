@@ -11,26 +11,40 @@ public class Cow : MonoBehaviour
 
    private Rigidbody2D rb;
    private BoxCollider2D boxCollider2d;
-   public int health = 3;
+   public int health = 1;
+
+   //public string jumpSoundName;
+   //public string deathSoundName;
+   //cache
+   private AudioManager audioManager;
 
     void Start()
     {
         rb = transform.GetComponent<Rigidbody2D>();
         boxCollider2d = transform.GetComponent<BoxCollider2D>();
+
+        //caching
+        audioManager = AudioManager.instance;
+        if( audioManager == null)
+        Debug.LogError("No AudioManager found in scene");
     }
 
     void Update()
     {   
         rb.MoveRotation(straightenCow(rb.position.x, rb.position.y));
-        
+
         if (health <= 0) {
-            SceneManager.LoadScene("GameOver");
+             
+             audioManager.PlaySound("Death");
+     
+            SceneManager.LoadScene("GameOver"); 
         }
 
         if (IsGrounded() && Input.GetKeyDown(KeyCode.Space)) //Hyppää vain jos koskettaa maata
         {
             float jumpHeight = 6f;
             rb.velocity = Vector2.up * jumpHeight;
+             audioManager.PlaySound("Jump");
         }
 
        if (Input.GetKey(KeyCode.D))
