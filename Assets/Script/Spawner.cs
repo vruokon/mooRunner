@@ -8,14 +8,16 @@ public GameObject obstacle;
 public GameObject parentObject;
 public GameObject objectRotation;
 
-private float timeBtwSpawn;
+public float timeBtwSpawn;
+public float minimumSpawnTime;
+public float maximumSpawnTime;
+
 private float startTimeBtwSpawn;
-public float decreaseTime;
 
 
  void Start() 
 { 
-    startTimeBtwSpawn = Random.Range(7, 10);  
+    startTimeBtwSpawn = Random.Range(minimumSpawnTime, maximumSpawnTime);  
 }
 
 
@@ -27,7 +29,7 @@ void Update()
         myObject.transform.parent = parentObject.transform;
         myObject.transform.rotation = objectRotation.transform.rotation; 
         
-        startTimeBtwSpawn = Random.Range(7, 10);
+        startTimeBtwSpawn = Random.Range(minimumSpawnTime, maximumSpawnTime);
         Debug.Log(startTimeBtwSpawn);
         timeBtwSpawn = startTimeBtwSpawn;
     }   else {
