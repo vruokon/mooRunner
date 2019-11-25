@@ -7,7 +7,7 @@ using System;
 public class Cow : MonoBehaviour
 {
     [SerializeField] private LayerMask platformsLayerMask;
-    float moveSpeed = 3;
+    float moveSpeed = 1.5f;
 
    private Rigidbody2D rb;
    private BoxCollider2D boxCollider2d;
@@ -29,7 +29,7 @@ public class Cow : MonoBehaviour
 
         if (IsGrounded() && Input.GetKeyDown(KeyCode.Space)) //Hyppää vain jos koskettaa maata
         {
-            float jumpHeight = 6f;
+            float jumpHeight = 4f;
             rb.velocity = Vector2.up * jumpHeight;
         }
 
