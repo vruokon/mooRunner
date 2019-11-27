@@ -5,20 +5,22 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Text score;
-    public int scoreAmount;
     private Text scoreText;
+    public float timer = 0.0f;
+    public int seconds;
 
     void Start()
     {
         scoreText = GetComponent<Text>();
-        scoreAmount = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = "Score: " + scoreAmount;
-        scoreAmount++;
+        // seconds in float
+        timer += Time.deltaTime;
+        // turn seconds in float to int
+        seconds = (int)(timer % 60);
+        scoreText.text = "Score: " + seconds;
     }
 }
