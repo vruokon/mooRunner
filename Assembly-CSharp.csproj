@@ -55,6 +55,7 @@
   <ItemGroup>
      <Compile Include="Assets\AudioManager.cs" />
      <Compile Include="Assets\menu.cs" />
+     <Compile Include="Assets\Script\avaruusAlus.cs" />
      <Compile Include="Assets\Script\camera.cs" />
      <Compile Include="Assets\Script\Cow.cs" />
      <Compile Include="Assets\Script\Gravity.cs" />
