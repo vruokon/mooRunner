@@ -9,19 +9,30 @@ public class Meteorite : MonoBehaviour {
 
     private Transform target;
     private Vector3 movementVector = Vector3.zero;
+
+    private AudioManager audioManager;
       
     void Start(){
         target = GameObject.FindWithTag("Cow").transform;
-        movementVector = (target.position - transform.position).normalized;      
+        movementVector = (target.position - transform.position).normalized;     
+        
+        //caching
+        audioManager = AudioManager.instance;
+        if( audioManager == null)
+        Debug.LogError("No AudioManager found in scene"); 
+
+          audioManager.PlaySound("Falling");
     }
 
-    void Update(){  
+    void Update(){        
         float step = speed * Time.deltaTime;    
-        transform.position += movementVector * step;    
+        transform.position += movementVector * step;     
     }
 
-    void OnTriggerEnter2D(Collider2D other){
+    void OnTriggerEnter2D(Collider2D other){ 
+       audioManager.PlaySound("Explosion");
         Destroy(gameObject);
+        
 
         if (other.CompareTag("Cow")) {
             //Pelaaja ottaa vahinkoa.

@@ -34,10 +34,12 @@ public class Cow : MonoBehaviour
         rb.MoveRotation(straightenCow(rb.position.x, rb.position.y));
 
         if (health <= 0) {
-             
+            moveSpeed=0f;
+             health=1;
              audioManager.PlaySound("Death");
      
-            SceneManager.LoadScene("GameOver"); 
+            Destroy(gameObject, 1);
+            //SceneManager.LoadScene("GameOver"); 
         }
 
         if (IsGrounded() && Input.GetKeyDown(KeyCode.Space)) //Hyppää vain jos koskettaa maata

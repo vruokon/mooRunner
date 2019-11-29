@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3040901235778127141
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3040901235778127139}
+  - component: {fileID: 3040901235778127138}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3040901235778127139
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3040901235778127141}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3040901235778127138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3040901235778127141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c246311d73f381f458064998d4d95ff5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Background
+    clip: {fileID: 8300000, guid: 6f377a71b57edc44c96c7f959538e076, type: 3}
+    volume: 0.476
+    pitch: 0.925
+    loop: 1
+  - name: Jump
+    clip: {fileID: 8300000, guid: 0a19e1b2e7487564e906e398759c2727, type: 3}
+    volume: 0.421
+    pitch: 0.925
+    loop: 0
+  - name: Death
+    clip: {fileID: 8300000, guid: 10ff9187d1920664292a603ec3945bf1, type: 3}
+    volume: 1
+    pitch: 0.954
+    loop: 0
+  - name: Explosion
+    clip: {fileID: 8300000, guid: 102ed68d7384fcd4192cfdebdd27a3de, type: 3}
+    volume: 1
+    pitch: 0.954
+    loop: 0
+  - name: Falling
+    clip: {fileID: 8300000, guid: 5a9db879a1ae9c348a8080182329caf5, type: 3}
+    volume: 0.17
+    pitch: 0.954
+    loop: 0
+  - name: Ufo
+    clip: {fileID: 8300000, guid: 168920ef1d1b13f4aba4f54c54b61a4c, type: 3}
+    volume: 0.535
+    pitch: 0.712
+    loop: 0

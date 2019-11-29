@@ -56,6 +56,8 @@ void Start(){
        sounds[i].SetSource(_go.AddComponent<AudioSource>());
     }
   PlaySound("Background");
+  PlaySound("GameOver");
+  PlaySound("YellowForest");
 }
 
 public void PlaySound(string _name){
