@@ -12,14 +12,19 @@ public class avaruusAlus : MonoBehaviour
     {
         alus = transform.GetComponent<Rigidbody2D>();
         alus.velocity = new Vector2(-moveSpeed, alus.velocity.y);
+
+         //caching
+        audioManager = AudioManager.instance;
+        if( audioManager == null)
+        Debug.LogError("No AudioManager found in scene"); 
+
+          audioManager.PlaySound("Ufo");
     }
 
     // Update is called once per frame
     void Update()
     {
-        alus.velocity = new Vector2(-moveSpeed, alus.velocity.y);  
-        //audioManager.PlaySound("Ufo");
-        
+        alus.velocity = new Vector2(-moveSpeed, alus.velocity.y);   
     }
 
 
