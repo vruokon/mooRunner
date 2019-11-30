@@ -6,8 +6,8 @@ public class avaruusAlus : MonoBehaviour
 {
     float moveSpeed = 1.1f;
     private Rigidbody2D alus;
-    // Start is called before the first frame update
     private AudioManager audioManager;
+    
     void Start()
     {
         alus = transform.GetComponent<Rigidbody2D>();
@@ -18,7 +18,14 @@ public class avaruusAlus : MonoBehaviour
     void Update()
     {
         alus.velocity = new Vector2(-moveSpeed, alus.velocity.y);  
-        audioManager.PlaySound("Ufo");
+        //audioManager.PlaySound("Ufo");
+        
+    }
+
+
+    // Tuhoaa objektin, kun se on kadonnut kameran alueelta
+    void OnBecameInvisible() {
+         Destroy(gameObject);
     }
 
 }

@@ -7,10 +7,11 @@ public class Spawner2 : MonoBehaviour
 
 public GameObject obstacle;
 
-private float timeBtwSpawn;
-private float startTimeBtwSpawn;
+public float timeBtwSpawn;
 public float minimumSpawnTime;
 public float maximumSpawnTime;
+
+private float startTimeBtwSpawn;
 
 
  void Start() 
