@@ -5,14 +5,17 @@ using UnityEngine;
 public class avaruusAlus : MonoBehaviour
 {
     float moveSpeed = 1.1f;
-
     private bool isMoving = true;
     private bool continueMoving = false;
+    private bool isCreated = false;
+
     private Rigidbody2D alus;
     private AudioManager audioManager;
-
     private Transform target;
     private Vector3 targetPos;
+    private GameObject myObject;
+    public GameObject obstacle;
+
     
     void Start()
     {
@@ -52,6 +55,7 @@ public class avaruusAlus : MonoBehaviour
         if (continueMoving == true){
            transform.position += Vector3.left * step;
         }
+
          
     }
 
@@ -62,7 +66,15 @@ public class avaruusAlus : MonoBehaviour
 
     // Odottaa pelaajan paikalla hetken aikaa
     IEnumerator Wait(){
+        yield return new WaitForSeconds(1);
+
+        if(isCreated == false){
+            myObject = Instantiate(obstacle, transform.position, Quaternion.identity);        
+            isCreated = true;
+        }
+            
         yield return new WaitForSeconds(3);
+        Destroy(myObject); 
         continueMoving = true;
        
         
