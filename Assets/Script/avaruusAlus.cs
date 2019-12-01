@@ -71,6 +71,7 @@ public class avaruusAlus : MonoBehaviour
         if(isCreated == false){
             myObject = Instantiate(obstacle, transform.position, Quaternion.identity);        
             isCreated = true;
+            audioManager.PlaySound("Laser");
         }
             
         yield return new WaitForSeconds(3);

@@ -66,6 +66,8 @@ public class Cow : MonoBehaviour
         }  
     }
 
+
+
 // Siirrytään GameOver-ruutuun, mikäli lehmä on kameran ulkopuolella
     void OnBecameInvisible() {
         SceneManager.LoadScene("GameOver"); 
