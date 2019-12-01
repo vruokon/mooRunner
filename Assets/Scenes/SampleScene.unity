@@ -379,6 +379,8 @@ MonoBehaviour:
   timeBtwSpawn: 10
   minimumSpawnTime: 10
   maximumSpawnTime: 15
+  absoluteMin: 2
+  absoluteMax: 7
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,9 +900,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacle: {fileID: 1009290498284474549, guid: c4da1dfd6967e8940af5062262c060d5,
     type: 3}
-  timeBtwSpawn: 3
-  minimumSpawnTime: 10
-  maximumSpawnTime: 15
+  timeBtwSpawn: 15
+  minimumSpawnTime: 15
+  maximumSpawnTime: 20
+  absoluteMin: 5
+  absoluteMax: 10
 --- !u!1 &1770753935
 GameObject:
   m_ObjectHideFlags: 0
@@ -1487,5 +1491,15 @@ PrefabInstance:
       propertyPath: obstacle
       value: 
       objectReference: {fileID: 1865858907}
+    - target: {fileID: 6595611718539342747, guid: bca3db8611ac7834ab1cc1f63dc6cc66,
+        type: 3}
+      propertyPath: absoluteMin
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595611718539342747, guid: bca3db8611ac7834ab1cc1f63dc6cc66,
+        type: 3}
+      propertyPath: absoluteMax
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bca3db8611ac7834ab1cc1f63dc6cc66, type: 3}

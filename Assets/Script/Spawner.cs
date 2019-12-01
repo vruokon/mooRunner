@@ -8,15 +8,19 @@ public GameObject obstacle;
 public GameObject parentObject;
 public GameObject objectRotation;
 
+private static float j;
+
 public float timeBtwSpawn;
 public float minimumSpawnTime;
 public float maximumSpawnTime;
+public float absoluteMin;
+public float absoluteMax;
 
 private float startTimeBtwSpawn;
 
 
  void Start() 
-{ 
+{
     startTimeBtwSpawn = Random.Range(minimumSpawnTime, maximumSpawnTime);  
 }
 
@@ -30,8 +34,23 @@ void Update()
         myObject.transform.rotation = objectRotation.transform.rotation; 
         
         startTimeBtwSpawn = Random.Range(minimumSpawnTime, maximumSpawnTime);
-        Debug.Log(startTimeBtwSpawn);
         timeBtwSpawn = startTimeBtwSpawn;
+
+        j = Moon.j;
+
+        if (minimumSpawnTime > absoluteMin & maximumSpawnTime > absoluteMax){
+            minimumSpawnTime = minimumSpawnTime - j * 1.5f;
+            maximumSpawnTime = maximumSpawnTime - j * 1.5f;
+        }
+
+        if (minimumSpawnTime < absoluteMin){
+             minimumSpawnTime = absoluteMin;
+        } 
+        
+        if(maximumSpawnTime < absoluteMax) {
+            maximumSpawnTime = absoluteMax;
+        }
+
     }   else {
             timeBtwSpawn -= Time.deltaTime;
         }
