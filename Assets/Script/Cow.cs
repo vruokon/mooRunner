@@ -45,7 +45,7 @@ public class Cow : MonoBehaviour
 
         if (IsGrounded() && Input.GetKeyDown(KeyCode.Space)) //Hyppää vain jos koskettaa maata
         {
-            float jumpHeight = 5.0f;
+            float jumpHeight = 6.0f;
             rb.velocity = Vector2.up * jumpHeight;
             audioManager.PlaySound("Jump");
         }
