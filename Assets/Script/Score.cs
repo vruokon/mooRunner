@@ -20,7 +20,7 @@ public class Score : MonoBehaviour
         // seconds in float
         timer += Time.deltaTime;
         // turn seconds in float to int
-        seconds = (int)(timer % 60);
+        seconds = (int)(timer);
         scoreText.text = "Score: " + seconds;
     }
 }
