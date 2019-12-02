@@ -16,18 +16,18 @@ public class avaruusAlus : MonoBehaviour
     private GameObject myObject;
     public GameObject obstacle;
 
-    
+
     void Start()
     {
         target = GameObject.FindWithTag("Cow").transform;
 
         //caching
         audioManager = AudioManager.instance;
-        if( audioManager == null)
-        Debug.LogError("No AudioManager found in scene"); 
+        if (audioManager == null)
+            Debug.LogError("No AudioManager found in scene");
 
-          audioManager.PlaySound("Ufo");
-        
+        audioManager.PlaySound("Ufo");
+
         //alus = transform.GetComponent<Rigidbody2D>();
         //alus.velocity = new Vector2(-moveSpeed, alus.velocity.y);
     }
@@ -37,48 +37,55 @@ public class avaruusAlus : MonoBehaviour
     {
         //alus.velocity = new Vector2(-moveSpeed, alus.velocity.y);  
         //audioManager.PlaySound("Ufo");
-       
-       float step = moveSpeed * Time.deltaTime;
+
+        float step = moveSpeed * Time.deltaTime;
 
         targetPos = transform.position;
 
-        if (targetPos.x == target.position.x){
+        if (targetPos.x == target.position.x)
+        {
             isMoving = false;
-            StartCoroutine(Wait());                
+            StartCoroutine(Wait());
         }
 
-        if (isMoving == true){
+        if (isMoving == true)
+        {
             targetPos.x = target.transform.position.x;
-            transform.position = Vector3.MoveTowards (transform.position, targetPos, step);
+            transform.position = Vector3.MoveTowards(transform.position, targetPos, step);
         }
 
-        if (continueMoving == true){
-           transform.position += Vector3.left * step;
+        if (continueMoving == true)
+        {
+            transform.position += Vector3.left * step;
         }
 
-         
+
     }
 
     // Tuhoaa objektin, kun se on kadonnut kameran alueelta
-    void OnBecameInvisible() {
+    void OnBecameInvisible()
+    {
+        audioManager.MuteSound("Ufo");
         Destroy(gameObject);
     }
 
     // Odottaa pelaajan paikalla hetken aikaa
-    IEnumerator Wait(){
+    IEnumerator Wait()
+    {
         yield return new WaitForSeconds(1);
 
-        if(isCreated == false){
-            myObject = Instantiate(obstacle, transform.position, Quaternion.identity);        
+        if (isCreated == false)
+        {
+            myObject = Instantiate(obstacle, transform.position, Quaternion.identity);
             isCreated = true;
             audioManager.PlaySound("Laser");
         }
-            
+
         yield return new WaitForSeconds(3);
-        Destroy(myObject); 
+        Destroy(myObject);
         continueMoving = true;
-       
-        
+
+
     }
 
 }
