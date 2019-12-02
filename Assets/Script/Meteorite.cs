@@ -6,6 +6,10 @@ public class Meteorite : MonoBehaviour {
 
     public int damage = 1;
     public float speed = 5f;
+    
+
+    public GameObject explosion;
+    private GameObject explode;
 
     private Transform target;
     private Vector3 movementVector = Vector3.zero;
@@ -30,10 +34,12 @@ public class Meteorite : MonoBehaviour {
     }
 
     void OnTriggerEnter2D(Collider2D other){ 
-       audioManager.PlaySound("Explosion");
+        audioManager.PlaySound("Explosion");
+
+        Instantiate(explosion, transform.position, Quaternion.identity);
+
         Destroy(gameObject);
         
-
         if (other.CompareTag("Cow")) {
             //Pelaaja ottaa vahinkoa.
             other.GetComponent<Cow>().health -= damage;

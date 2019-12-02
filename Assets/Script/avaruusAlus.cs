@@ -28,15 +28,11 @@ public class avaruusAlus : MonoBehaviour
 
         audioManager.PlaySound("Ufo");
 
-        //alus = transform.GetComponent<Rigidbody2D>();
-        //alus.velocity = new Vector2(-moveSpeed, alus.velocity.y);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //alus.velocity = new Vector2(-moveSpeed, alus.velocity.y);  
-        //audioManager.PlaySound("Ufo");
 
         float step = moveSpeed * Time.deltaTime;
 
