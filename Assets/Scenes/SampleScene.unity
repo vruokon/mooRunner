@@ -661,7 +661,7 @@ MonoBehaviour:
   platformsLayerMask:
     serializedVersion: 2
     m_Bits: 512
-  health: 100
+  health: 1
 --- !u!61 &810815878
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1084,14 +1084,14 @@ RectTransform:
   m_GameObject: {fileID: 1984983469}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.54}
-  m_LocalScale: {x: 0.006, y: 0.006, z: 1}
+  m_LocalScale: {x: 0.008033601, y: 0.008033601, z: 1.0042}
   m_Children: []
   m_Father: {fileID: 472517838}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -515.0674, y: -381.4781}
+  m_AnchoredPosition: {x: -514.93, y: -381.4781}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1984983471
