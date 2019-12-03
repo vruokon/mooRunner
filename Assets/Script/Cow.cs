@@ -60,11 +60,7 @@ public class Cow : MonoBehaviour
             rb.constraints = RigidbodyConstraints2D.None;
             rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
         }
-        else if (!IsGrounded())
-        {
 
-            rb.constraints = RigidbodyConstraints2D.None;
-        }
         else
         {
             rb.constraints = RigidbodyConstraints2D.FreezePositionX;
