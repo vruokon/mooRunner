@@ -54,13 +54,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\AudioManager.cs" />
-     <Compile Include="Assets\menu.cs" />
      <Compile Include="Assets\Script\avaruusAlus.cs" />
      <Compile Include="Assets\Script\camera.cs" />
      <Compile Include="Assets\Script\Cow.cs" />
      <Compile Include="Assets\Script\DeathRay.cs" />
      <Compile Include="Assets\Script\Explosion.cs" />
      <Compile Include="Assets\Script\Gravity.cs" />
+     <Compile Include="Assets\Script\menu.cs" />
      <Compile Include="Assets\Script\Meteorite.cs" />
      <Compile Include="Assets\Script\Moon.cs" />
      <Compile Include="Assets\Script\NewMoon.cs" />
