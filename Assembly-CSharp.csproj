@@ -60,7 +60,6 @@
      <Compile Include="Assets\Script\DeathRay.cs" />
      <Compile Include="Assets\Script\Explosion.cs" />
      <Compile Include="Assets\Script\Gravity.cs" />
-     <Compile Include="Assets\Script\highScore.cs" />
      <Compile Include="Assets\Script\menu.cs" />
      <Compile Include="Assets\Script\Meteorite.cs" />
      <Compile Include="Assets\Script\Moon.cs" />
