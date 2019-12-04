@@ -22,7 +22,7 @@ public class Score : MonoBehaviour
         timer += Time.deltaTime;
         // turn seconds in float to int
         seconds = (int)(timer);
-        scoreText.text = "Score: " + seconds;
+        scoreText.text = "Score:" + seconds;
         PlayerPrefs.SetInt("score", seconds);
         if(seconds > PlayerPrefs.GetInt("highScore", 0)) {
             PlayerPrefs.SetInt("highScore", seconds);

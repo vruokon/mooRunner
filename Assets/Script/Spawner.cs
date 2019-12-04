@@ -35,7 +35,7 @@ void Update()
     
     if (timeBtwSpawn <= 0) {
 
-        if (random ==0){
+        if (random == 0){
             myObject = Instantiate(obstacle1, transform.position, Quaternion.identity);
         } else{
             myObject = Instantiate(obstacle2, transform.position, Quaternion.identity);
@@ -50,11 +50,11 @@ void Update()
         j = Moon.j;
 
         if (minimumSpawnTime > absoluteMin){ 
-            minimumSpawnTime = minimumSpawnTime - j * 1.5f;       
+            minimumSpawnTime = minimumSpawnTime - j * 0.8f;       
         }
 
         if (maximumSpawnTime > absoluteMax){
-            maximumSpawnTime = maximumSpawnTime - j * 1.5f;
+            maximumSpawnTime = maximumSpawnTime - j * 1.0f;
         }
 
         if (minimumSpawnTime < absoluteMin){

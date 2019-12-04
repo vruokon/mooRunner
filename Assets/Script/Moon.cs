@@ -31,7 +31,7 @@ public class Moon : MonoBehaviour
             i += j;
             rb2D.MoveRotation((float)i);
             yield return new WaitForSeconds(.01f);
-            j += 0.00005f;
+            j += 0.00008f;
         }
     }
 }
