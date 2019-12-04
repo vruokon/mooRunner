@@ -9,6 +9,9 @@ public class Cow : MonoBehaviour
     [SerializeField] private LayerMask platformsLayerMask;
     float moveSpeed = 1.5f;
 
+    public GameObject cowDies;
+
+    private Renderer rend;
     private Rigidbody2D rb;
     private BoxCollider2D boxCollider2d;
     public int health = 1;
@@ -22,7 +25,8 @@ public class Cow : MonoBehaviour
     {
         rb = transform.GetComponent<Rigidbody2D>();
         boxCollider2d = transform.GetComponent<BoxCollider2D>();
-
+        rend = GetComponent<Renderer>();
+    
         //caching
         audioManager = AudioManager.instance;
         if (audioManager == null)
@@ -39,7 +43,9 @@ public class Cow : MonoBehaviour
             health = 1;
             audioManager.PlaySound("Death");
 
-            Destroy(gameObject, 1);
+            var myobject = Instantiate(cowDies, transform.position, Quaternion.identity);
+            rend.enabled = false;
+            
             //SceneManager.LoadScene("GameOver"); 
         }
 
@@ -67,12 +73,10 @@ public class Cow : MonoBehaviour
         }
     }
 
-
-
     // Siirrytään GameOver-ruutuun, mikäli lehmä on kameran ulkopuolella
-    void OnBecameInvisible()
+    void OnBecameInvisible()       
     {
-        SceneManager.LoadScene("GameOver");
+        StartCoroutine(Wait());
     }
 
     //Tarkastetaan että lehmä koskettaa platformia
@@ -100,4 +104,12 @@ public class Cow : MonoBehaviour
 
         return (float)angle;
     }
+
+    IEnumerator Wait(){
+        yield return new WaitForSeconds(1.5f);
+        Destroy(gameObject);
+        SceneManager.LoadScene("GameOver");
+    }
+
+
 }

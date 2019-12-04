@@ -661,6 +661,7 @@ MonoBehaviour:
   platformsLayerMask:
     serializedVersion: 2
     m_Bits: 512
+  cowDies: {fileID: 4103190650871991957, guid: 0522d61ea43b21e44a4953652639a48e, type: 3}
   health: 1
 --- !u!61 &810815878
 BoxCollider2D:

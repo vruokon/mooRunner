@@ -34,9 +34,12 @@ void Update()
 
         j = Moon.j;
 
-        if (minimumSpawnTime > absoluteMin & maximumSpawnTime > absoluteMax){
-            minimumSpawnTime = minimumSpawnTime - j;
-            maximumSpawnTime = maximumSpawnTime - j;
+        if (minimumSpawnTime > absoluteMin){ 
+            minimumSpawnTime = minimumSpawnTime - j * 1.5f;       
+        }
+
+        if (maximumSpawnTime > absoluteMax){
+            maximumSpawnTime = maximumSpawnTime - j * 1.5f;
         }
 
         if (minimumSpawnTime < absoluteMin){
