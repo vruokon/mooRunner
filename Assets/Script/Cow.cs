@@ -20,13 +20,14 @@ public class Cow : MonoBehaviour
     //public string deathSoundName;
     //cache
     private AudioManager audioManager;
+    bool cowAlive = true;
 
     void Start()
     {
         rb = transform.GetComponent<Rigidbody2D>();
         boxCollider2d = transform.GetComponent<BoxCollider2D>();
         rend = GetComponent<Renderer>();
-    
+
         //caching
         audioManager = AudioManager.instance;
         if (audioManager == null)
@@ -37,15 +38,16 @@ public class Cow : MonoBehaviour
     {
         rb.MoveRotation(straightenCow(rb.position.x, rb.position.y));
 
-        if (health <= 0)
+        if (health <= 0 && cowAlive)
         {
+            cowAlive = false;
             moveSpeed = 0f;
             health = 1;
             audioManager.PlaySound("Death");
 
             var myobject = Instantiate(cowDies, transform.position, Quaternion.identity);
             rend.enabled = false;
-            
+
             //SceneManager.LoadScene("GameOver"); 
         }
 
@@ -74,7 +76,7 @@ public class Cow : MonoBehaviour
     }
 
     // Siirrytään GameOver-ruutuun, mikäli lehmä on kameran ulkopuolella
-    void OnBecameInvisible()       
+    void OnBecameInvisible()
     {
         StartCoroutine(Wait());
     }
@@ -105,7 +107,8 @@ public class Cow : MonoBehaviour
         return (float)angle;
     }
 
-    IEnumerator Wait(){
+    IEnumerator Wait()
+    {
         yield return new WaitForSeconds(1.5f);
         Destroy(gameObject);
         SceneManager.LoadScene("GameOver");
